@@ -15,6 +15,7 @@ static bool init_ok;
 static SDL_GameController *sdl_cntrl;
 
 static void controller_sdl_init(void) {
+    SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS,"1");
     if (SDL_Init(SDL_INIT_GAMECONTROLLER) != 0) {
         fprintf(stderr, "SDL init error: %s\n", SDL_GetError());
         return;
